@@ -332,9 +332,10 @@ header h1 {
   transition: box-shadow var(--transition);
 }
 
-.step-1 { background-image: url(steps-icon-1.png); }
-.step-2 { background-image: url(steps-icon-2.png); }
-.step-3 { background-image: url(steps-icon-3.png); }
+
+.step-1 { background-image: url(ima/steps-icon-1.png); }
+.step-2 { background-image: url(ima/steps-icon-2.png); }
+.step-3 { background-image: url(ima/steps-icon-3.png); }
 
 .step-1:hover,
 .step-2:hover,
