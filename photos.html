@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerie – LEMBI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Polices Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HEADER — Logo + navigation principale
+       Le bouton .menu-navi s'affiche uniquement sur mobile
+  ════════════════════════════════════════════════════════════ -->
+  <header>
+    <h1>LEMBI<span class="point">.</span></h1>
+    <nav>
+      <ul id="topmen">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="destination.html">Destination</a></li>
+        <li><a href="photos.html">Galerie</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Bouton hamburger — visible sur mobile, géré par script.js -->
+    <button class="menu-navi" aria-label="Ouvrir le menu">☰</button>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION GALERIE
+       CORRECTION MAJEURE : IDs dupliqués sur les champs météo
+       Chaque pays a maintenant des IDs uniques :
+       - input : meteo-PAYS
+       - result : result-PAYS
+       La fonction getMeteo(inputId, resultId) dans script.js
+       prend ces IDs en paramètre pour cibler le bon élément
+  ════════════════════════════════════════════════════════════ -->
+  <section id="Pp">
+
+    <h1>Images du bout du monde</h1>
+    <h5>Un avant-goût des merveilles qui vous attendent.</h5>
+
+    <!-- ══════════════════════════════════════════
+         CONGO-BRAZZAVILLE
+    ═══════════════════════════════════════════ -->
+    <section class="p">
+      <div class="pp"><img src="ima/image01.jpeg"   alt="Congo-Brazzaville 1"></div>
+      <div class="pp"><img src="ima/IMG_3298.JPG"   alt="Congo-Brazzaville 2"></div>
+      <div class="pp"><img src="ima/IMG_3294.JPG"   alt="Congo-Brazzaville 3"></div>
+    </section>
+
+    <!-- Description + carte + météo -->
+    <p>Congo-Brazzaville</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Congo" target="_blank" rel="noopener">Voir sur la carte</a>
+
+    <!-- Météo Congo — IDs uniques : meteo-congo / result-congo -->
+    <div style="margin: 10px 0;">
+      <input class="meteo-input" id="meteo-congo" type="text" placeholder="Entrez une ville">
+      <button class="meteo-btn" onclick="getMeteo('meteo-congo', 'result-congo')">Météo</button>
+      <p class="meteo-result" id="result-congo"></p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         SÉNÉGAL
+    ═══════════════════════════════════════════ -->
+    <section class="p">
+      <div class="pp"><img src="ima/IMG_3300.JPG" alt="Sénégal 1"></div>
+      <div class="pp"><img src="ima/IMG_3301.JPG" alt="Sénégal 2"></div>
+      <div class="pp"><img src="ima/IMG_3302.JPG" alt="Sénégal 3"></div>
+    </section>
+
+    <p>Sénégal</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Senegal" target="_blank" rel="noopener">Voir sur la carte</a>
+
+    <!-- Météo Sénégal — IDs uniques : meteo-senegal / result-senegal -->
+    <div style="margin: 10px 0;">
+      <input class="meteo-input" id="meteo-senegal" type="text" placeholder="Entrez une ville">
+      <button class="meteo-btn" onclick="getMeteo('meteo-senegal', 'result-senegal')">Météo</button>
+      <p class="meteo-result" id="result-senegal"></p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         BRÉSIL
+    ═══════════════════════════════════════════ -->
+    <section class="p">
+      <div class="pp"><img src="ima/IMG_3303.JPG" alt="Brésil 1"></div>
+      <div class="pp"><img src="ima/IMG_3304.JPG" alt="Brésil 2"></div>
+      <div class="pp"><img src="ima/IMG_3305.JPG" alt="Brésil 3"></div>
+    </section>
+
+    <p>Brésil</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Bresil" target="_blank" rel="noopener">Voir sur la carte</a>
+
+    <!-- Météo Brésil — IDs uniques : meteo-bresil / result-bresil -->
+    <div style="margin: 10px 0;">
+      <input class="meteo-input" id="meteo-bresil" type="text" placeholder="Entrez une ville">
+      <button class="meteo-btn" onclick="getMeteo('meteo-bresil', 'result-bresil')">Météo</button>
+      <p class="meteo-result" id="result-bresil"></p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         MEXIQUE
+    ═══════════════════════════════════════════ -->
+    <section class="p">
+      <div class="pp"><img src="ima/IMG_3306.JPG" alt="Mexique 1"></div>
+      <div class="pp"><img src="ima/IMG_3307.JPG" alt="Mexique 2"></div>
+      <div class="pp"><img src="ima/IMG_3308.JPG" alt="Mexique 3"></div>
+    </section>
+
+    <p>Mexique</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Mexique" target="_blank" rel="noopener">Voir sur la carte</a>
+
+    <!-- Météo Mexique — IDs uniques : meteo-mexique / result-mexique -->
+    <div style="margin: 10px 0;">
+      <input class="meteo-input" id="meteo-mexique" type="text" placeholder="Entrez une ville">
+      <button class="meteo-btn" onclick="getMeteo('meteo-mexique', 'result-mexique')">Météo</button>
+      <p class="meteo-result" id="result-mexique"></p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         ITALIE
+    ═══════════════════════════════════════════ -->
+    <section class="p">
+      <div class="pp"><img src="ima/IMG_3309.JPG" alt="Italie 1"></div>
+      <div class="pp"><img src="ima/IMG_3310.JPG" alt="Italie 2"></div>
+      <div class="pp"><img src="ima/IMG_3311.JPG" alt="Italie 3"></div>
+    </section>
+
+    <p>Italie</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Italie" target="_blank" rel="noopener">Voir sur la carte</a>
+
+    <!-- Météo Italie — IDs uniques : meteo-italie / result-italie -->
+    <div style="margin: 10px 0;">
+      <input class="meteo-input" id="meteo-italie" type="text" placeholder="Entrez une ville">
+      <button class="meteo-btn" onclick="getMeteo('meteo-italie', 'result-italie')">Météo</button>
+      <p class="meteo-result" id="result-italie"></p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         ESPAGNE
+    ═══════════════════════════════════════════ -->
+    <section class="p">
+      <div class="pp"><img src="ima/IMG_3312.JPG" alt="Espagne 1"></div>
+      <div class="pp"><img src="ima/IMG_3313.JPG" alt="Espagne 2"></div>
+      <div class="pp"><img src="ima/IMG_3314.JPG" alt="Espagne 3"></div>
+    </section>
+
+    <p>Espagne</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Espagne" target="_blank" rel="noopener">Voir sur la carte</a>
+
+    <!-- Météo Espagne — IDs uniques : meteo-espagne / result-espagne -->
+    <div style="margin: 10px 0;">
+      <input class="meteo-input" id="meteo-espagne" type="text" placeholder="Entrez une ville">
+      <button class="meteo-btn" onclick="getMeteo('meteo-espagne', 'result-espagne')">Météo</button>
+      <p class="meteo-result" id="result-espagne"></p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         CORÉE DU SUD
+    ═══════════════════════════════════════════ -->
+    <section class="p">
+      <div class="pp"><img src="ima/IMG_3315.JPG" alt="Corée du Sud 1"></div>
+      <div class="pp"><img src="ima/IMG_3316.JPG" alt="Corée du Sud 2"></div>
+      <div class="pp"><img src="ima/IMG_3317.JPG" alt="Corée du Sud 3"></div>
+    </section>
+
+    <p>Corée du Sud</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Cor%C3%A9e+du+Sud" target="_blank" rel="noopener">Voir sur la carte</a>
+
+    <!-- Météo Corée — IDs uniques : meteo-coree / result-coree -->
+    <div style="margin: 10px 0;">
+      <input class="meteo-input" id="meteo-coree" type="text" placeholder="Entrez une ville">
+      <button class="meteo-btn" onclick="getMeteo('meteo-coree', 'result-coree')">Météo</button>
+      <p class="meteo-result" id="result-coree"></p>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         CHINE
+    ═══════════════════════════════════════════ -->
+    <section class="p">
+      <div class="pp"><img src="ima/IMG_3318.JPG" alt="Chine 1"></div>
+      <div class="pp"><img src="ima/IMG_3319.JPG" alt="Chine 2"></div>
+      <div class="pp"><img src="ima/IMG_3320.JPG" alt="Chine 3"></div>
+    </section>
+
+    <p>Chine</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Chine" target="_blank" rel="noopener">Voir sur la carte</a>
+
+    <!-- Météo Chine — IDs uniques : meteo-chine / result-chine -->
+    <div style="margin: 10px 0;">
+      <input class="meteo-input" id="meteo-chine" type="text" placeholder="Entrez une ville">
+      <button class="meteo-btn" onclick="getMeteo('meteo-chine', 'result-chine')">Météo</button>
+      <p class="meteo-result" id="result-chine"></p>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       BOUTON MODE SOMBRE
+  ════════════════════════════════════════════════════════════ -->
+  <div style="text-align:center; padding: 30px 0;">
+    <button class="toggle-mode-btn" onclick="toggleMode()">Mode sombre</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-container">
+
+      <div class="footer-column">
+        <h3>LEMBI</h3>
+        <p>Explorez le monde avec nous. Des expériences uniques, partout sur la planète.</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul>
+          <li>32 avenue du Voyage, Paris</li>
+          <li>+33 1 24 08 03 06</li>
+          <li>contact@lembi.fr</li>
+        </ul>
+        <div class="social-icons" style="margin-top:12px;">
+          <a href="#" title="Facebook">Facebook</a>
+          <a href="#" title="Instagram">Instagram</a>
+          <a href="#" title="TikTok">TikTok</a>
+        </div>
+      </div>
+
+      <div class="footer-column newsletter">
+        <h3>Newsletter</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Votre e-mail" required>
+          <button type="submit" class="newsletter-submit">S'inscrire</button>
+          <p class="newsletter-msg"></p>
+        </form>
+        <p style="margin-top:10px; font-size:0.85rem;">
+          Offres exclusives et inspirations voyage directement dans votre boîte !
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 LEMBI — Tous droits réservés | Mentions légales | Politique de confidentialité
+    </div>
+  </footer>
+
+  <!-- Script chargé en dernier pour ne pas bloquer le rendu -->
+  <script src="script.js"></script>
+
+</body>
+</html>

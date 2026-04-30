@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merci – LEMBI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Polices Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HEADER — Logo + navigation principale
+       Identique sur toutes les pages pour la cohérence
+  ════════════════════════════════════════════════════════════ -->
+  <header>
+    <h1>LEMBI<span class="point">.</span></h1>
+    <nav>
+      <ul id="topmen">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="destination.html">Destination</a></li>
+        <li><a href="photos.html">Galerie</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Bouton hamburger — visible sur mobile, géré par script.js -->
+    <button class="menu-navi" aria-label="Ouvrir le menu">☰</button>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PAGE DE RÉPONSE
+       Affichée automatiquement après soumission du formulaire
+       contact.html (action="reponse.html")
+       CORRECTION : page complète avec header, footer et design
+       cohérent au lieu de juste un texte centré sans structure
+  ════════════════════════════════════════════════════════════ -->
+  <main>
+    <div class="reponse-wrapper">
+      <div class="reponse-card">
+
+        <!-- Icône de validation -->
+        <div class="reponse-icon">&#10003;</div>
+
+        <!-- Message principal -->
+        <h1>Merci pour votre demande !</h1>
+
+        <p>
+          Nous avons bien reçu votre message et nous vous répondrons
+          dans les plus brefs délais.<br>
+          Notre équipe prépare déjà votre voyage de rêve !
+        </p>
+
+        <!-- Citation inspirante -->
+        <blockquote>
+          "Le voyage est la seule chose qu'on achète qui nous rend plus riche."
+        </blockquote>
+
+        <!-- Boutons de redirection -->
+        <div class="reponse-btns">
+          <a href="index.html" class="button-1">Retour à l'accueil</a>
+          <a href="destination.html" class="button-2">Voir les destinations</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER — Coordonnées, réseaux sociaux, newsletter
+  ════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-container">
+
+      <!-- Présentation LEMBI -->
+      <div class="footer-column">
+        <h3>LEMBI</h3>
+        <p>Explorez le monde avec nous. Des expériences uniques, partout sur la planète.</p>
+      </div>
+
+      <!-- Coordonnées -->
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul>
+          <li>32 avenue du Voyage, Paris</li>
+          <li>+33 1 24 08 03 06</li>
+          <li>contact@lembi.fr</li>
+        </ul>
+        <div class="social-icons" style="margin-top:12px;">
+          <a href="#" title="Facebook">Facebook</a>
+          <a href="#" title="Instagram">Instagram</a>
+          <a href="#" title="TikTok">TikTok</a>
+        </div>
+      </div>
+
+      <!-- Newsletter — géré par script.js -->
+      <div class="footer-column newsletter">
+        <h3>Newsletter</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Votre e-mail" required>
+          <button type="submit" class="newsletter-submit">S'inscrire</button>
+          <!-- Message de confirmation affiché par script.js -->
+          <p class="newsletter-msg"></p>
+        </form>
+        <p style="margin-top:10px; font-size:0.85rem;">
+          Offres exclusives et inspirations voyage directement dans votre boîte !
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bas de footer -->
+    <div class="footer-bottom">
+      © 2025 LEMBI — Tous droits réservés | Mentions légales | Politique de confidentialité
+    </div>
+  </footer>
+
+  <!-- Script chargé en dernier pour ne pas bloquer le rendu -->
+  <script src="script.js"></script>
+
+</body>
+</html>

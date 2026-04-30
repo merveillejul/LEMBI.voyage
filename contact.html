@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – LEMBI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Polices Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HEADER — Logo + navigation principale
+       Le bouton .menu-navi s'affiche uniquement sur mobile
+  ════════════════════════════════════════════════════════════ -->
+  <header>
+    <h1>LEMBI<span class="point">.</span></h1>
+    <nav>
+      <ul id="topmen">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="destination.html">Destination</a></li>
+        <li><a href="photos.html">Galerie</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Bouton hamburger — visible sur mobile, géré par script.js -->
+    <button class="menu-navi" aria-label="Ouvrir le menu">☰</button>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FORMULAIRE DE CONTACT
+       script.js gère :
+       - la validation des champs (nom, prénom, email, dates)
+       - le calcul automatique de la durée du séjour
+       - l'affichage des astuces de voyage
+       - la soumission vers reponse.html
+       CORRECTION : action="reponse.html" au lieu d'un chemin local
+  ════════════════════════════════════════════════════════════ -->
+  <main>
+    <form action="reponse.html" method="post">
+      <div class="tabl">
+
+        <!-- Titre et introduction -->
+        <div class="ta">
+          <h1>Contactez-nous</h1>
+          <p>
+            Une envie de découvrir le monde ? Que vous ayez une destination
+            en tête ou simplement l'envie de partir, dites-nous tout !
+            Notre équipe est là pour créer le voyage qui vous ressemble.
+          </p>
+        </div>
+
+        <!-- ── Informations personnelles ── -->
+
+        <!-- Nom -->
+        <label for="name">Nom *</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Votre nom"
+          required>
+
+        <!-- Prénom -->
+        <label for="prenom">Prénom *</label>
+        <input
+          type="text"
+          id="prenom"
+          name="prenom"
+          placeholder="Votre prénom"
+          required>
+
+        <!-- Email -->
+        <label for="email">Email *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="votre@email.fr"
+          required>
+
+        <!-- ── Préférences de voyage ── -->
+
+        <!-- Destination souhaitée -->
+        <label for="destination">Destination souhaitée</label>
+        <select id="destination" name="destination">
+          <option value="">-- Choisissez une destination --</option>
+          <option value="congo">Congo-Brazzaville</option>
+          <option value="senegal">Sénégal</option>
+          <option value="espagne">Espagne</option>
+          <option value="italie">Italie</option>
+          <option value="mexique">Mexique</option>
+          <option value="bresil">Brésil</option>
+          <option value="coree">Corée du Sud</option>
+          <option value="chine">Chine</option>
+        </select>
+
+        <!-- Dates du séjour
+             script.js calcule automatiquement la durée
+             quand les deux dates sont renseignées -->
+        <label>Dates du séjour</label>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:8px;">
+          <div>
+            <label for="depart" style="font-size:0.8rem; text-transform:none; font-weight:600;">Départ</label>
+            <input type="date" id="depart" name="date_depart">
+          </div>
+          <div>
+            <label for="retour" style="font-size:0.8rem; text-transform:none; font-weight:600;">Retour</label>
+            <input type="date" id="retour" name="date_retour">
+          </div>
+        </div>
+
+        <!-- Zone de durée calculée automatiquement par script.js -->
+        <div id="duree"></div>
+
+        <!-- Type de voyage -->
+        <label>Type de voyage</label>
+        <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:16px;">
+          <label style="text-transform:none; font-weight:400; display:flex; align-items:center; gap:6px;">
+            <input type="radio" name="voyage" value="aventure"> Aventure
+          </label>
+          <label style="text-transform:none; font-weight:400; display:flex; align-items:center; gap:6px;">
+            <input type="radio" name="voyage" value="culturel"> Culturel
+          </label>
+          <label style="text-transform:none; font-weight:400; display:flex; align-items:center; gap:6px;">
+            <input type="radio" name="voyage" value="luxe"> Luxe
+          </label>
+        </div>
+
+        <!-- Services souhaités -->
+        <label>Services souhaités</label>
+        <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:16px;">
+          <label style="text-transform:none; font-weight:400; display:flex; align-items:center; gap:6px;">
+            <input type="checkbox" name="services" value="hotel"> Hôtel
+          </label>
+          <label style="text-transform:none; font-weight:400; display:flex; align-items:center; gap:6px;">
+            <input type="checkbox" name="services" value="transport"> Transport
+          </label>
+          <label style="text-transform:none; font-weight:400; display:flex; align-items:center; gap:6px;">
+            <input type="checkbox" name="services" value="guide"> Guide
+          </label>
+        </div>
+
+        <!-- Message libre -->
+        <label for="message">Commentaire</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Décrivez votre projet de voyage..."></textarea>
+
+        <!-- Bouton envoi — validation interceptée par script.js -->
+        <button type="submit" class="button-4">Envoyer ma demande</button>
+
+      </div>
+    </form>
+
+    <!-- ── Bouton astuce de voyage ──
+         script.js affiche une astuce aléatoire dans #astuce -->
+    <div style="text-align:center; margin: 30px 0 10px;">
+      <button class="button-2" onclick="afficherAstuce()">Une astuce voyage</button>
+      <!-- Zone d'affichage de l'astuce — remplie par script.js -->
+      <div id="astuce" style="max-width:600px; margin: 14px auto 0;"></div>
+    </div>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       BOUTON MODE SOMBRE
+  ════════════════════════════════════════════════════════════ -->
+  <div style="text-align:center; padding: 20px 0 40px;">
+    <button class="toggle-mode-btn" onclick="toggleMode()">Mode sombre</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER — Coordonnées, réseaux sociaux, newsletter
+  ════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-container">
+
+      <!-- Présentation LEMBI -->
+      <div class="footer-column">
+        <h3>LEMBI</h3>
+        <p>Explorez le monde avec nous. Des expériences uniques, partout sur la planète.</p>
+      </div>
+
+      <!-- Coordonnées -->
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul>
+          <li>32 avenue du Voyage, Paris</li>
+          <li>+33 1 24 08 03 06</li>
+          <li>contact@lembi.fr</li>
+        </ul>
+        <div class="social-icons" style="margin-top:12px;">
+          <a href="#" title="Facebook">Facebook</a>
+          <a href="#" title="Instagram">Instagram</a>
+          <a href="#" title="TikTok">TikTok</a>
+        </div>
+      </div>
+
+      <!-- Newsletter — géré par script.js -->
+      <div class="footer-column newsletter">
+        <h3>Newsletter</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Votre e-mail" required>
+          <button type="submit" class="newsletter-submit">S'inscrire</button>
+          <!-- Message de confirmation affiché par script.js -->
+          <p class="newsletter-msg"></p>
+        </form>
+        <p style="margin-top:10px; font-size:0.85rem;">
+          Offres exclusives et inspirations voyage directement dans votre boîte !
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bas de footer -->
+    <div class="footer-bottom">
+      © 2025 LEMBI — Tous droits réservés | Mentions légales | Politique de confidentialité
+    </div>
+  </footer>
+
+  <!-- Script chargé en dernier pour ne pas bloquer le rendu -->
+  <script src="script.js"></script>
+
+</body>
+</html>

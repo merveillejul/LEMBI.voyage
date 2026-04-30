@@ -1,0 +1,951 @@
+/* ============================================================
+   style.css — LEMBI
+   Design : minimaliste, épuré, typographie forte
+   ============================================================ */
+
+/* ─── Variables globales ─────────────────────────────────────── */
+:root {
+  --orange:       #ff7a00;
+  --orange-hover: #e06a00;
+  --bleu:         #0f1f5c;
+  --bleu-clair:   #3a86ff;
+  --fond:         #ffffff;
+  --fond-section: #f8f9fc;
+  --fond-carte:   #ffffff;
+  --texte:        #1a1a2e;
+  --texte-clair:  #6b7280;
+  --bordure:      #e5e7eb;
+  --footer-bg:    #0f1f5c;
+  --radius:       4px;
+  --radius-lg:    12px;
+  --shadow:       0 1px 4px rgba(0,0,0,0.06);
+  --shadow-hover: 0 8px 32px rgba(0,0,0,0.10);
+  --transition:   0.25s ease;
+}
+
+/* ─── Reset & Base ───────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 15px;
+  color: var(--texte);
+  background-color: var(--fond);
+  line-height: 1.7;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+
+/* ─── Header ─────────────────────────────────────────────────── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  height: 70px;
+  background: var(--fond);
+  border-bottom: 1px solid var(--bordure);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--texte);
+  letter-spacing: 0.08em;
+}
+
+.point { color: var(--orange); }
+
+/* ─── Navigation ─────────────────────────────────────────────── */
+#topmen {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+}
+
+#topmen li a {
+  color: var(--texte-clair);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 8px 16px;
+  transition: color var(--transition);
+  display: block;
+  position: relative;
+}
+
+/* Ligne sous le lien au hover */
+#topmen li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+
+#topmen li a:hover {
+  color: var(--texte);
+}
+
+#topmen li a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ─── Bouton hamburger mobile ────────────────────────────────── */
+.menu-navi {
+  display: none;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  color: var(--texte);
+  cursor: pointer;
+  padding: 8px;
+  order: 2;
+}
+
+#topmen.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: var(--fond);
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--bordure);
+  gap: 4px;
+  align-items: flex-start;
+}
+
+/* ─── Boutons ────────────────────────────────────────────────── */
+
+/* Bouton principal — plein, orange */
+.button-1 {
+  display: inline-block;
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  padding: 13px 36px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  margin-top: 20px;
+}
+
+.button-1:hover {
+  background: var(--orange-hover);
+  transform: translateY(-1px);
+}
+
+/* Bouton secondaire — contour fin */
+.button-2 {
+  display: inline-block;
+  background: transparent;
+  color: var(--texte);
+  border: 1.5px solid var(--texte);
+  padding: 11px 28px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  margin: 10px 0;
+}
+
+.button-2:hover {
+  background: var(--texte);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Bouton tertiaire — petit, discret */
+.button-3 {
+  display: inline-block;
+  background: transparent;
+  color: var(--texte-clair);
+  border: 1px solid var(--bordure);
+  padding: 7px 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  margin: 4px;
+}
+
+.button-3:hover {
+  border-color: var(--texte);
+  color: var(--texte);
+}
+
+/* Bouton quaternaire — plein, bleu foncé */
+.button-4 {
+  display: inline-block;
+  background: var(--bleu);
+  color: #fff;
+  border: none;
+  padding: 13px 36px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  margin-top: 10px;
+}
+
+.button-4:hover {
+  background: var(--bleu-clair);
+  transform: translateY(-1px);
+}
+
+/* Bouton mode sombre */
+.toggle-mode-btn {
+  display: inline-block;
+  background: transparent;
+  color: var(--texte-clair);
+  border: 1px solid var(--bordure);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition);
+  margin: 24px auto;
+}
+
+.toggle-mode-btn:hover {
+  border-color: var(--texte);
+  color: var(--texte);
+}
+
+/* ─── Hero ───────────────────────────────────────────────────── */
+#image_princip {
+  height: 92vh;
+  background-image: url(ima/image2.jpeg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+/* Dégradé bas vers haut pour lisibilité */
+#image_princip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 31, 92, 0.7) 0%,
+    rgba(15, 31, 92, 0.1) 50%,
+    transparent 100%
+  );
+}
+
+#image_princip .ima {
+  position: relative;
+  padding: 0 8vw 8vh;
+  max-width: 700px;
+}
+
+#image_princip h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+#image_princip h2 strong {
+  color: var(--orange);
+}
+
+#image_princip p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+/* ─── Section Steps ──────────────────────────────────────────── */
+#step {
+  padding: 100px 60px;
+  background: var(--fond-section);
+}
+
+.ima2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--bordure);
+  border: 1px solid var(--bordure);
+}
+
+/* Chaque step : fond blanc, séparé par une bordure fine */
+.step-1,
+.step-2,
+.step-3 {
+  background: var(--fond);
+  padding: 48px 40px;
+  background-repeat: no-repeat;
+  background-position: top 32px left 40px;
+  background-size: 48px;
+  padding-top: 100px;
+  transition: box-shadow var(--transition);
+}
+
+.step-1 { background-image: url(steps-icon-1.png); }
+.step-2 { background-image: url(steps-icon-2.png); }
+.step-3 { background-image: url(steps-icon-3.png); }
+
+.step-1:hover,
+.step-2:hover,
+.step-3:hover {
+  box-shadow: inset 0 0 0 2px var(--orange);
+}
+
+#step h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 900;
+  color: var(--bleu);
+  margin-bottom: 14px;
+}
+
+#step p {
+  color: var(--texte-clair);
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+/* ─── Section Destinations ───────────────────────────────────── */
+#possi {
+  padding: 80px 60px;
+}
+
+#possi h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--orange);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+#possi > p {
+  text-align: center;
+  color: var(--texte-clair);
+  font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--texte);
+  margin-bottom: 10px;
+}
+
+/* Grille destinations */
+.conta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+  margin-bottom: 24px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Carte destination — épurée, sans border-radius excessif */
+.cont {
+  background: var(--fond);
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.cont:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.cont img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cont:hover img {
+  transform: scale(1.03);
+}
+
+.cont h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--texte);
+  padding: 16px 16px 4px;
+  text-transform: uppercase;
+}
+
+.cont p {
+  padding: 0 16px 12px;
+  color: var(--texte-clair);
+  font-size: 0.85rem;
+  flex: 1;
+  line-height: 1.6;
+}
+
+.cont .button-2 {
+  align-self: flex-start;
+  margin: 0 16px 20px;
+  font-size: 0.72rem;
+  padding: 8px 20px;
+}
+
+/* ─── Section Galerie ────────────────────────────────────────── */
+#Pp {
+  padding: 80px 60px;
+  background: var(--fond-section);
+}
+
+#Pp h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--orange);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+#Pp h5 {
+  text-align: center;
+  color: var(--texte-clair);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+/* Nom du pays */
+#Pp > p {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--texte);
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: left;
+  margin: 24px 0 8px;
+}
+
+/* Grille photos */
+.p {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.pp {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--bordure);
+}
+
+.pp img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.pp:hover img {
+  transform: scale(1.04);
+  opacity: 0.92;
+}
+
+/* Lien carte */
+#Pp a {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bleu-clair);
+  text-decoration: underline;
+  margin: 6px 0;
+  transition: color var(--transition);
+}
+
+#Pp a:hover { color: var(--orange); }
+
+/* Champ météo */
+.meteo-input {
+  padding: 8px 12px;
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-family: inherit;
+  margin-right: 8px;
+  margin-top: 8px;
+  color: var(--texte);
+  transition: border-color var(--transition);
+}
+
+.meteo-input:focus {
+  outline: none;
+  border-color: var(--bleu-clair);
+}
+
+.meteo-btn {
+  padding: 8px 16px;
+  background: var(--bleu);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background var(--transition);
+}
+
+.meteo-btn:hover { background: var(--bleu-clair); }
+
+.meteo-result {
+  font-weight: 600;
+  color: var(--bleu);
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
+/* ─── Formulaire Contact ─────────────────────────────────────── */
+.tabl {
+  max-width: 680px;
+  margin: 60px auto;
+  background: var(--fond);
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius-lg);
+  padding: 48px 56px;
+  box-shadow: var(--shadow);
+}
+
+.tabl h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--texte);
+  margin-bottom: 6px;
+}
+
+.tabl > p {
+  color: var(--texte-clair);
+  font-size: 0.92rem;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--texte);
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  font-family: inherit;
+  background: var(--fond);
+  color: var(--texte);
+  transition: border-color var(--transition);
+  margin-bottom: 20px;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--bleu-clair);
+}
+
+input[type="radio"],
+input[type="checkbox"],
+input[type="date"] {
+  margin-right: 6px;
+  cursor: pointer;
+  accent-color: var(--bleu);
+}
+
+select[name="destination"] {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  font-family: inherit;
+  background: var(--fond);
+  color: var(--texte);
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: border-color var(--transition);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+select[name="destination"]:focus {
+  outline: none;
+  border-color: var(--bleu-clair);
+}
+
+#duree {
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 8px 0;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Page Réponse ───────────────────────────────────────────── */
+.reponse-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  padding: 60px 20px;
+  background: var(--fond-section);
+}
+
+.reponse-card {
+  background: var(--fond);
+  border: 1px solid var(--bordure);
+  border-radius: var(--radius-lg);
+  padding: 64px 56px;
+  max-width: 580px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.reponse-icon {
+  width: 72px;
+  height: 72px;
+  background: #f0fdf4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #16a34a;
+  margin: 0 auto 28px;
+  border: 1px solid #bbf7d0;
+}
+
+.reponse-card h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--texte);
+  margin-bottom: 16px;
+}
+
+.reponse-card p {
+  color: var(--texte-clair);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+.reponse-card blockquote {
+  font-style: italic;
+  color: var(--texte-clair);
+  font-size: 0.9rem;
+  border-left: 2px solid var(--orange);
+  padding: 10px 18px;
+  margin: 24px auto;
+  max-width: 440px;
+  text-align: left;
+}
+
+.reponse-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+/* ─── Mode sombre ────────────────────────────────────────────── */
+.dark-mode {
+  background-color: #0d0d0d;
+  color: #e5e7eb;
+}
+
+.dark-mode header {
+  background: #111;
+  border-bottom-color: #222;
+}
+
+.dark-mode #topmen li a { color: #9ca3af; }
+.dark-mode #topmen li a:hover { color: #fff; }
+
+.dark-mode .cont {
+  background: #161616;
+  border-color: #222;
+}
+
+.dark-mode .cont h4 { color: #f3f4f6; }
+.dark-mode .cont p  { color: #9ca3af; }
+
+.dark-mode .pp { background: #1a1a1a; }
+
+.dark-mode .tabl {
+  background: #111;
+  border-color: #222;
+}
+
+.dark-mode input[type="text"],
+.dark-mode input[type="email"],
+.dark-mode textarea,
+.dark-mode select {
+  background: #1a1a1a;
+  color: #e5e7eb;
+  border-color: #333;
+}
+
+.dark-mode #step {
+  background: #111;
+}
+
+.dark-mode .step-1,
+.dark-mode .step-2,
+.dark-mode .step-3 {
+  background: #161616;
+}
+
+.dark-mode .ima2 { background: #222; }
+
+.dark-mode .reponse-wrapper { background: #0d0d0d; }
+.dark-mode .reponse-card { background: #111; border-color: #222; }
+
+.dark-mode footer { background: #060606; }
+
+.dark-mode .toggle-mode-btn {
+  border-color: #333;
+  color: #9ca3af;
+}
+
+.light-mode {
+  background-color: #ffffff;
+  color: var(--texte);
+}
+
+/* ─── Footer ─────────────────────────────────────────────────── */
+footer {
+  background: var(--footer-bg);
+  color: rgba(255,255,255,0.85);
+  padding: 60px 60px 24px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 48px;
+}
+
+.footer-column { flex: 1 1 200px; }
+
+.footer-column h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer-column p,
+.footer-column li {
+  font-size: 0.88rem;
+  line-height: 2;
+  color: rgba(255,255,255,0.65);
+}
+
+.footer-column a {
+  color: rgba(255,255,255,0.65);
+  transition: color var(--transition);
+}
+
+.footer-column a:hover { color: #fff; }
+
+.social-icons a {
+  margin-right: 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.65);
+  transition: color var(--transition);
+}
+
+.social-icons a:hover { color: var(--orange); }
+
+/* Newsletter footer */
+.newsletter input[type="email"] {
+  padding: 10px 14px;
+  width: 65%;
+  margin-right: 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-family: inherit;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.newsletter input[type="email"]::placeholder { color: rgba(255,255,255,0.4); }
+.newsletter input[type="email"]:focus { outline: none; border-color: var(--orange); }
+
+.newsletter-submit {
+  padding: 10px 20px;
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background var(--transition);
+}
+
+.newsletter-submit:hover { background: var(--orange-hover); }
+
+.newsletter-msg {
+  font-size: 0.82rem;
+  margin-top: 8px;
+  display: none;
+  color: rgba(255,255,255,0.8);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.04em;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .conta { grid-template-columns: repeat(2, 1fr); }
+  .p     { grid-template-columns: repeat(2, 1fr); }
+  .ima2  { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0 20px;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 14px 20px;
+    gap: 10px;
+    position: relative;
+  }
+
+  #topmen { display: none; width: 100%; }
+  .menu-navi { display: block; }
+
+  #image_princip { height: 70vh; }
+  #image_princip .ima { padding: 0 24px 6vh; }
+
+  #step { padding: 60px 24px; }
+  #possi { padding: 60px 24px; }
+  #Pp    { padding: 60px 24px; }
+
+  .conta { grid-template-columns: 1fr; }
+  .p     { grid-template-columns: 1fr; }
+
+  .tabl { padding: 32px 24px; margin: 32px 16px; }
+
+  footer { padding: 48px 24px 20px; }
+  .footer-container { flex-direction: column; }
+
+  .newsletter input[type="email"] {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 { font-size: 1.2rem; }
+  #image_princip h2 { font-size: 1.8rem; }
+}

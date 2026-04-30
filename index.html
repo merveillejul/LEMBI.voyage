@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEMBI – Voyages sur mesure</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Polices Google : propres et lisibles -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HEADER — Logo + navigation principale
+       sticky : reste visible en scrollant
+       Le bouton .menu-navi s'affiche uniquement sur mobile
+  ════════════════════════════════════════════════════════════ -->
+  <header>
+    <h1>LEMBI<span class="point">.</span></h1>
+    <nav>
+      <ul id="topmen">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="destination.html">Destination</a></li>
+        <li><a href="photos.html">Galerie</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Bouton hamburger — visible sur mobile, géré par script.js -->
+    <button class="menu-navi" aria-label="Ouvrir le menu">☰</button>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HERO — Grande image d'accueil avec slogan et CTA
+       L'image de fond est définie dans le CSS (#image_princip)
+  ════════════════════════════════════════════════════════════ -->
+  <section id="image_princip">
+    <div class="ima">
+      <h2>Organiser votre<br><strong>voyage sur mesure</strong></h2>
+      <p>Là où vos rêves mènent, nos voyages commencent.</p>
+      <!-- Lien ancre vers la section steps -->
+      <a class="button-1" href="#step">Par ici</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       STEPS — Les 3 étapes du service LEMBI
+       Chaque step a une icône en fond définie dans le CSS
+  ════════════════════════════════════════════════════════════ -->
+  <section id="step">
+    <div class="ima2">
+
+      <!-- Étape 1 : Planifier -->
+      <div class="step-1">
+        <h4>Planifier</h4>
+        <p>Confiez-nous vos rêves d'évasion en famille ou entre amis,
+          nous trouverons la formule qui comblera vos attentes.</p>
+      </div>
+
+      <!-- Étape 2 : Organiser -->
+      <div class="step-2">
+        <h4>Organiser</h4>
+        <p>Bénéficiez de l'expertise de nos spécialistes de chaque
+          destination, qui vous accompagnent dans la réalisation de vos voyages.</p>
+      </div>
+
+      <!-- Étape 3 : Voyager -->
+      <div class="step-3">
+        <h4>Voyager</h4>
+        <p>Nous nous chargeons d'assurer votre sécurité et de veiller
+          à votre pleine sérénité tout au long de votre voyage.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       BOUTON MODE SOMBRE
+       La classe toggle-mode-btn est ciblée par script.js
+       pour mettre à jour le texte du bouton automatiquement
+  ════════════════════════════════════════════════════════════ -->
+  <div style="text-align:center; padding: 30px 0;">
+    <button class="toggle-mode-btn" onclick="toggleMode()">Mode sombre</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER — Coordonnées, réseaux sociaux, newsletter
+       CORRECTION : lien newsletter local remplacé par un vrai form
+  ════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-container">
+
+      <!-- Présentation LEMBI -->
+      <div class="footer-column">
+        <h3>LEMBI</h3>
+        <p>Explorez le monde avec nous. Des expériences uniques, partout sur la planète.</p>
+      </div>
+
+      <!-- Coordonnées -->
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul>
+          <li>32 avenue du Voyage, Paris</li>
+          <li>+33 1 24 08 03 06</li>
+          <li>contact@lembi.fr</li>
+        </ul>
+        <!-- Réseaux sociaux — sans emojis dans les attributs -->
+        <div class="social-icons" style="margin-top:12px;">
+          <a href="#" title="Facebook">Facebook</a>
+          <a href="#" title="Instagram">Instagram</a>
+          <a href="#" title="TikTok">TikTok</a>
+        </div>
+      </div>
+
+      <!-- Newsletter
+           CORRECTION : <a href="chemin local"> remplacé par un vrai <button>
+           Le formulaire a la classe newsletter-form ciblée par script.js -->
+      <div class="footer-column newsletter">
+        <h3>Newsletter</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Votre e-mail" required>
+          <button type="submit" class="newsletter-submit">S'inscrire</button>
+          <!-- Message de confirmation affiché par script.js -->
+          <p class="newsletter-msg"></p>
+        </form>
+        <p style="margin-top:10px; font-size:0.85rem;">
+          Offres exclusives et inspirations voyage directement dans votre boîte !
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bas de footer -->
+    <div class="footer-bottom">
+      © 2025 LEMBI — Tous droits réservés | Mentions légales | Politique de confidentialité
+    </div>
+  </footer>
+
+  <!-- Script chargé en dernier pour ne pas bloquer le rendu -->
+  <script src="script.js"></script>
+
+</body>
+</html>

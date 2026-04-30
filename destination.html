@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinations – LEMBI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Polices Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HEADER — Logo + navigation principale
+       Le bouton .menu-navi s'affiche uniquement sur mobile
+  ════════════════════════════════════════════════════════════ -->
+  <header>
+    <h1>LEMBI<span class="point">.</span></h1>
+    <nav>
+      <ul id="topmen">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="destination.html">Destination</a></li>
+        <li><a href="photos.html">Galerie</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Bouton hamburger — visible sur mobile, géré par script.js -->
+    <button class="menu-navi" aria-label="Ouvrir le menu">☰</button>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION DESTINATIONS
+       Grille de 9 destinations en 3 rangées de 3
+       CORRECTION : images avec chemin ima/ correct
+       CORRECTION : grille CSS Grid au lieu de flex
+  ════════════════════════════════════════════════════════════ -->
+  <section id="possi">
+
+    <h1>Rêvez. Choisissez. Partez.</h1>
+    <p>Là où vos rêves mènent, nos voyages commencent.</p>
+
+    <!-- ── Rangée 1 ── -->
+    <div class="conta">
+
+      <!-- Destination 1 : Congo-Brazzaville -->
+      <div class="cont">
+        <img src="ima/IMG_3293.JPG" alt="Congo-Brazzaville">
+        <h4>Congo-Brazzaville</h4>
+        <p>Offrez le meilleur à ceux que vous aimez et partagez des moments fabuleux !</p>
+        <!-- Lien vers Wikipedia pour plus d'infos — s'ouvre dans un nouvel onglet -->
+        <a class="button-2" href="https://fr.wikipedia.org/wiki/R%C3%A9publique_du_Congo" target="_blank" rel="noopener">Plus d'infos</a>
+      </div>
+
+      <!-- Destination 2 : Sénégal -->
+      <div class="cont">
+        <img src="ima/IMG_3300.JPG" alt="Sénégal">
+        <h4>Sénégal</h4>
+        <p>Offrez le meilleur à ceux que vous aimez et partagez des moments fabuleux !</p>
+        <a class="button-2" href="https://fr.wikipedia.org/wiki/S%C3%A9n%C3%A9gal" target="_blank" rel="noopener">Plus d'infos</a>
+      </div>
+
+      <!-- Destination 3 : Brésil -->
+      <div class="cont">
+        <img src="ima/IMG_3305.JPG" alt="Brésil">
+        <h4>Brésil</h4>
+        <p>Parfois un peu d'évasion serait le bienvenu et ferait le plus grand bien !</p>
+        <a class="button-2" href="https://fr.wikipedia.org/wiki/Br%C3%A9sil" target="_blank" rel="noopener">Plus d'infos</a>
+      </div>
+
+    </div>
+
+    <!-- ── Rangée 2 ── -->
+    <div class="conta">
+
+      <!-- Destination 4 : Mexique -->
+      <div class="cont">
+        <img src="ima/IMG_3306.JPG" alt="Mexique">
+        <h4>Mexique</h4>
+        <p>Partagez l'exceptionnel avec ceux qui font battre votre cœur !</p>
+        <a class="button-2" href="https://fr.wikipedia.org/wiki/Mexique" target="_blank" rel="noopener">Plus d'infos</a>
+      </div>
+
+      <!-- Destination 5 : Italie -->
+      <div class="cont">
+        <img src="ima/IMG_3310.JPG" alt="Italie">
+        <h4>Italie</h4>
+        <p>Offrez le meilleur à ceux que vous aimez et partagez des moments fabuleux !</p>
+        <a class="button-2" href="https://fr.wikipedia.org/wiki/Italie" target="_blank" rel="noopener">Plus d'infos</a>
+      </div>
+
+      <!-- Destination 6 : Espagne -->
+      <div class="cont">
+        <img src="ima/IMG_3313.JPG" alt="Espagne">
+        <h4>Espagne</h4>
+        <p>Parce que chaque moment mérite d'être magique !</p>
+        <a class="button-2" href="https://fr.wikipedia.org/wiki/Espagne" target="_blank" rel="noopener">Plus d'infos</a>
+      </div>
+
+    </div>
+
+    <!-- ── Rangée 3 ── -->
+    <div class="conta">
+
+      <!-- Destination 7 : Corée du Sud -->
+      <div class="cont">
+        <img src="ima/IMG_3317.JPG" alt="Corée du Sud">
+        <h4>Corée du Sud</h4>
+        <p>Partagez l'exceptionnel avec ceux qui font battre votre cœur !</p>
+        <a class="button-2" href="https://fr.wikipedia.org/wiki/Cor%C3%A9e_du_Sud" target="_blank" rel="noopener">Plus d'infos</a>
+      </div>
+
+      <!-- Destination 8 : Chine -->
+      <div class="cont">
+        <img src="ima/IMG_3318.JPG" alt="Chine">
+        <h4>Chine</h4>
+        <p>Offrez le meilleur à ceux que vous aimez et partagez des moments fabuleux !</p>
+        <a class="button-2" href="https://fr.wikipedia.org/wiki/Chine" target="_blank" rel="noopener">Plus d'infos</a>
+      </div>
+
+      <!-- Destination 9 : Ailleurs -->
+      <div class="cont">
+        <img src="ima/IMG_3269.JPG" alt="Juste vous et ailleurs">
+        <h4>Juste vous et ailleurs</h4>
+        <p>Parce que chaque moment mérite d'être magique !</p>
+        <a class="button-2" href="contact.html">Contactez-nous</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       BOUTON MODE SOMBRE
+       La classe toggle-mode-btn est ciblée par script.js
+  ════════════════════════════════════════════════════════════ -->
+  <div style="text-align:center; padding: 30px 0;">
+    <button class="toggle-mode-btn" onclick="toggleMode()">Mode sombre</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER — Coordonnées, réseaux sociaux, newsletter
+  ════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-container">
+
+      <!-- Présentation LEMBI -->
+      <div class="footer-column">
+        <h3>LEMBI</h3>
+        <p>Explorez le monde avec nous. Des expériences uniques, partout sur la planète.</p>
+      </div>
+
+      <!-- Coordonnées -->
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul>
+          <li>32 avenue du Voyage, Paris</li>
+          <li>+33 1 24 08 03 06</li>
+          <li>contact@lembi.fr</li>
+        </ul>
+        <div class="social-icons" style="margin-top:12px;">
+          <a href="#" title="Facebook">Facebook</a>
+          <a href="#" title="Instagram">Instagram</a>
+          <a href="#" title="TikTok">TikTok</a>
+        </div>
+      </div>
+
+      <!-- Newsletter — géré par script.js -->
+      <div class="footer-column newsletter">
+        <h3>Newsletter</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Votre e-mail" required>
+          <button type="submit" class="newsletter-submit">S'inscrire</button>
+          <!-- Message de confirmation affiché par script.js -->
+          <p class="newsletter-msg"></p>
+        </form>
+        <p style="margin-top:10px; font-size:0.85rem;">
+          Offres exclusives et inspirations voyage directement dans votre boîte !
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bas de footer -->
+    <div class="footer-bottom">
+      © 2025 LEMBI — Tous droits réservés | Mentions légales | Politique de confidentialité
+    </div>
+  </footer>
+
+  <!-- Script chargé en dernier pour ne pas bloquer le rendu -->
+  <script src="script.js"></script>
+
+</body>
+</html>
